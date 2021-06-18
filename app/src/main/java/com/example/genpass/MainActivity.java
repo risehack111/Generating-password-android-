@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         else {
             if (swt_1.isChecked() && swt_2.isChecked()) {
-//            Toast.makeText(this, "sw_1 and sw_2 is checked", Toast.LENGTH_LONG).show();
+//
                 String size_str = String.valueOf(size.getText());
                 int size_int = Integer.parseInt(size_str);
                 arr_1 = new String[size_int];
@@ -62,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 int size_index = size_int - 1;
                 arr_2 = new String[size_int];
                 while (size_int >= 0 && i <= size_index) {
-    //                System.out.println(size_int);
-    //                System.out.println(i);
                     int random_symbol = rand.nextInt(30);
                     int random_letter = rand.nextInt(52);
                     int random_num = rand.nextInt(10);
@@ -73,16 +71,16 @@ public class MainActivity extends AppCompatActivity {
                     String symbol_str = String.valueOf(char_symbol);
                     String letter_str = String.valueOf(char_letter);
                     String num_str = String.valueOf(char_num);
-                    int test = rand.nextInt(3);
-                    System.out.println("Test: " + test);
-                    if (test == 0) {
+                    int Combination = rand.nextInt(3);
+                    System.out.println("Test: " + Combination);
+                    if (Combination == 0) {
                         System.out.println("Test is equals 0");
                         arr_1[i] = symbol_str + letter_str + num_str;
-                    } else if (test == 1) {
+                    } else if (Combination == 1) {
                         System.out.println("Test is equals 1");
                         arr_1[i] = num_str + letter_str + symbol_str;
                     }
-                    else if(test == 2)
+                    else if(Combination == 2)
                     {
                         System.out.println("Test is equals 2");
                         arr_1[i] = letter_str + num_str + symbol_str;
@@ -125,12 +123,12 @@ public class MainActivity extends AppCompatActivity {
                     char char_letter = english_alphabet.charAt(random_letter);
                     String symbol_str = String.valueOf(char_symbol);
                     String letter_str = String.valueOf(char_letter);
-                    int test = rand.nextInt(2);
-                    if(test == 0){
+                    int Combination = rand.nextInt(2);
+                    if(Combination == 0){
                         System.out.println("Test is equals 0");
                         arr_1[i] = symbol_str + letter_str;
                     }
-                    else if(test == 1)
+                    else if(Combination == 1)
                     {
                         System.out.println("Test is equals 1");
                         arr_1[i] = letter_str + symbol_str;
@@ -168,11 +166,11 @@ public class MainActivity extends AppCompatActivity {
                     char char_num = number.charAt(random_num);
                     String letter_str = String.valueOf(char_letter);
                     String num_str = String.valueOf(char_num);
-                    int test = rand.nextInt(2);
-                    if (test == 0) {
+                    int Combination = rand.nextInt(2);
+                    if (Combination == 0) {
                         System.out.println("Test is equals 0");
                         arr_1[i] = letter_str + num_str;
-                    } else if (test == 1) {
+                    } else if (Combination == 1) {
                         System.out.println("Test is equals 1");
                         arr_1[i] = num_str + letter_str;
                     }
@@ -227,9 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 clip.setPrimaryClip(myData);
                 Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_LONG).show();
             }
-//        int rise = rand.nextInt(20);
-//        String text = String.valueOf(rise);
-//        tv.setText(text);
+//
         }
     }
 }
