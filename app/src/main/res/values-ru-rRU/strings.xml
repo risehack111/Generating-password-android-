@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gen Pass</string>
+    <string name="place_of_text_output">Место вывода текста</string>
+    <string name="gen">Генерация</string>
+    <string name="text_and_special_characters">Текст и специальные символы</string>
+    <string name="text_and_numbers">Текст и цифры</string>
+    <string name="password">Пароль</string>
+    <string name="line_length">Длина пароля</string>
+</resources>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Gen Pass</string>
+    <string name="place_of_text_output">Place of text output</string>
+    <string name="gen">Generate</string>
+    <string name="text_and_special_characters">Text and special characters</string>
+    <string name="text_and_numbers">Text and numbers</string>
+    <string name="password">Password:</string>
+    <string name="line_length">Line length:</string>
 </resources>
