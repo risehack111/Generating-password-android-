@@ -27,8 +27,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/place_of_text_output"
+        android:enabled="false"
         android:gravity="start|top"
+        android:hint="@string/place_of_text_output"
         android:inputType="textMultiLine"
         android:textColor="@color/black"
         tools:visibility="invisible" />
@@ -71,10 +72,10 @@
         android:id="@+id/editTextNumber"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:inputType="number"
-        android:layout_below="@+id/textView" />
+        android:ems="10"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView"
