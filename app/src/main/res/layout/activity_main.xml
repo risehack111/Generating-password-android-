@@ -80,9 +80,9 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:textSize="17dp"
         android:inputType="number"
         android:minHeight="48dp"
+        android:textSize="17dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView

@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.widget.EditText
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Intent
 import android.os.Build
 import android.view.View
 import android.widget.Switch
@@ -39,127 +40,24 @@ class MainActivity : AppCompatActivity() {
             size.setText(rand_2_str)
         } else {
             if (switch1.isChecked && switch2.isChecked) {
+            val intent = Intent(this, ErrorActivity::class.java)
+                startActivity(intent)
 
-                val sizeStr = size.text.toString()
-                var sizeInt = sizeStr.toInt()
-                arr_1 = arrayOfNulls(sizeInt)
-                var i = 0
-                val sizeIndex = sizeInt - 1
-                arr_2 = arrayOfNulls(sizeInt)
-                while (sizeInt >= 0 && i <= sizeIndex) {
-                    val randomSymbol = rand.nextInt(30)
-                    val randomLetter = rand.nextInt(52)
-                    val randomNum = rand.nextInt(10)
-                    val charSymbol = special_Symbols[randomSymbol]
-                    val charLetter = english_alphabet[randomLetter]
-                    val charNum = number[randomNum]
-                    val symbolStr = charSymbol.toString()
-                    val letterStr = charLetter.toString()
-                    val numStr = charNum.toString()
-                    val Combination = rand.nextInt(3)
-
-                    when (Combination) {
-                        0 -> {
-
-                            arr_1[i] = symbolStr + letterStr + numStr
-                        }
-                        1 -> {
-
-                            arr_1[i] = numStr + letterStr + symbolStr
-                        }
-                        2 -> {
-
-                            arr_1[i] = letterStr + numStr + symbolStr
-                        }
-                    }
-                    i += 1
-                    sizeInt -= 1
-                }
-                for (s in 0 until i) {
-                    arr_2[s] = arr_1[s]
-                    print(arr_2[s])
-                }
-                val str = java.lang.String.join("", *arr_2)
-                println()
-                println(str)
-                tv.setText(str)
-                /*Copy in clipboard*/
-                val clip: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                val myData: ClipData = ClipData.newPlainText("", str)
-                clip.setPrimaryClip(myData)
-                Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_LONG).show()
             } else if (switch1.isChecked) {
-                val sizeStr = size.text.toString()
-                var sizeInt = sizeStr.toInt()
-                arr_1 = arrayOfNulls(sizeInt)
-                var i = 0
-                val sizeIndex = sizeInt - 1
-                arr_2 = arrayOfNulls(sizeInt)
-                while (sizeInt >= 0 && i <= sizeIndex) {
-                    val randomSymbol = rand.nextInt(30)
-                    val randomLetter = rand.nextInt(52)
-                    val charSymbol = special_Symbols[randomSymbol]
-                    val charLetter = english_alphabet[randomLetter]
-                    val symbolStr = charSymbol.toString()
-                    val letterStr = charLetter.toString()
-                    val Combination = rand.nextInt(2)
-                    if (Combination == 0) {
-                        println("Test is equals 0")
-                        arr_1[i] = symbolStr + letterStr
-                    } else if (Combination == 1) {
-                        println("Test is equals 1")
-                        arr_1[i] = letterStr + symbolStr
-                    }
-                    i += 1
-                    sizeInt -= 1
-                }
-                for (s in 0 until i) {
-                    arr_2[s] = arr_1[s]
-                    print(arr_2[s])
-                }
-                val str = java.lang.String.join("", *arr_2)
-                tv.setText(str)
-                val clip: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                val myData: ClipData = ClipData.newPlainText("", str)
-                clip.setPrimaryClip(myData)
-                Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, ErrorActivity::class.java)
+                startActivity(intent)
             } else if (switch2.isChecked) {
-                val sizeStr = size.text.toString()
-                var sizeInt = sizeStr.toInt()
-                arr_1 = arrayOfNulls(sizeInt)
-                var i = 0
-                val sizeIndex = sizeInt - 1
-                arr_2 = arrayOfNulls(sizeInt)
-                while (sizeInt >= 0 && i <= sizeIndex) {
-                    val randomLetter = rand.nextInt(52)
-                    val randomNum = rand.nextInt(10)
-                    val charLetter = english_alphabet[randomLetter]
-                    val charNum = number[randomNum]
-                    val letterStr = charLetter.toString()
-                    val numStr = charNum.toString()
-                    val Combination = rand.nextInt(2)
-                    if (Combination == 0) {
-                        println("Test is equals 0")
-                        arr_1[i] = letterStr + numStr
-                    } else if (Combination == 1) {
-                        println("Test is equals 1")
-                        arr_1[i] = numStr + letterStr
-                    }
-                    i += 1
-                    sizeInt -= 1
-                }
-                for (s in 0 until i) {
-                    arr_2[s] = arr_1[s]
-                    print(arr_2[s])
-                }
-                val str = java.lang.String.join("", *arr_2)
-                tv.setText(str)
-                val clip: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                val myData: ClipData = ClipData.newPlainText("", str)
-                clip.setPrimaryClip(myData)
-                Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, ErrorActivity::class.java)
+                startActivity(intent)
             } else {
                 val sizeStr = size.text.toString()
+                if (sizeStr == "")
+                {
+                    var sizeString = size.text.toString()
+                    var random_num = (3..100).random()
+                    sizeString = random_num.toString()
+                }
+                else{
                 var sizeInt = sizeStr.toInt()
                 arr_1 = arrayOfNulls(sizeInt)
                 var i = 0
@@ -186,6 +84,7 @@ class MainActivity : AppCompatActivity() {
                 val myData: ClipData = ClipData.newPlainText("", str)
                 clip.setPrimaryClip(myData)
                 Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_LONG).show()
+                }
             }
             //
         }

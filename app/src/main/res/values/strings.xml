@@ -6,4 +6,5 @@
     <string name="text_and_numbers">Text and numbers</string>
     <string name="password">Password:</string>
     <string name="line_length">Line length:</string>
+    <string name="Error">Данная опция не доступна в этой версии приложения. Для получения доступа к данной функции, обратитесь в личные сообщения сообщества автора.</string>
 </resources>
