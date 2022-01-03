@@ -77,11 +77,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 for (s in 0 until i) {
                     arr_2[s] = arr_1[s]
-                    print(arr_2[s])
                 }
                 val str = java.lang.String.join("", *arr_2)
                 println()
-                println(str)
                 tv.setText(str)
                 /*Copy in clipboard*/
                 val clip: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
@@ -104,10 +102,8 @@ class MainActivity : AppCompatActivity() {
                     val letterStr = charLetter.toString()
                     val Combination = rand.nextInt(2)
                     if (Combination == 0) {
-                        println("Test is equals 0")
                         arr_1[i] = symbolStr + letterStr
                     } else if (Combination == 1) {
-                        println("Test is equals 1")
                         arr_1[i] = letterStr + symbolStr
                     }
                     i += 1
@@ -115,7 +111,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 for (s in 0 until i) {
                     arr_2[s] = arr_1[s]
-                    print(arr_2[s])
                 }
                 val str = java.lang.String.join("", *arr_2)
                 tv.setText(str)
@@ -139,10 +134,8 @@ class MainActivity : AppCompatActivity() {
                     val numStr = charNum.toString()
                     val Combination = rand.nextInt(2)
                     if (Combination == 0) {
-                        println("Test is equals 0")
                         arr_1[i] = letterStr + numStr
                     } else if (Combination == 1) {
-                        println("Test is equals 1")
                         arr_1[i] = numStr + letterStr
                     }
                     i += 1
@@ -150,7 +143,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 for (s in 0 until i) {
                     arr_2[s] = arr_1[s]
-                    print(arr_2[s])
                 }
                 val str = java.lang.String.join("", *arr_2)
                 tv.setText(str)
@@ -175,11 +167,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 for (s in 0 until i) {
                     arr_2[s] = arr_1[s]
-                    print(arr_2[s])
                 }
                 val str = java.lang.String.join("", *arr_2)
                 println()
-                println(str)
                 tv.setText(str)
                 /*Copy in clipboard*/
                 val clip: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
@@ -187,7 +177,6 @@ class MainActivity : AppCompatActivity() {
                 clip.setPrimaryClip(myData)
                 Toast.makeText(this, "Password copied to clipboard", Toast.LENGTH_LONG).show()
             }
-            //
         }
     }
 }
